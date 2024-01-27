@@ -1,0 +1,7 @@
+.navbar{
+    background: linear-gradient(90deg, rgba(126, 144, 254, 0.05) 0%, rgba(152, 115, 255, 0.05) 100%);
+    background-image: url('../../images/bg2.png'), url('../../images/bg1.png');
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: top right, bottom left;
+}

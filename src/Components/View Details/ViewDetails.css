@@ -1,0 +1,32 @@
+.navbar{
+    background: linear-gradient(90deg, rgba(126, 144, 254, 0.05) 0%, rgba(152, 115, 255, 0.05) 100%);
+    background-image: url('../../images/bg2.png'), url('../../images/bg1.png');
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: top right, bottom left;
+}
+
+.full-details{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background: #FFF;
+    gap: 24px;
+}
+
+
+@media(min-width: 768px) and (max-width: 850px) {
+    .full-details{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+}
+
+@media (max-width: 767px) {
+    .full-details{
+        display: block;
+    }
+    .description{
+        margin-bottom: 30px;
+    }
+}
