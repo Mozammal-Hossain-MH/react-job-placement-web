@@ -9,11 +9,15 @@ import Main from './Components/MainPage/Main';
 import Home from './Components/Home/Home';
 import ViewDetails from './Components/View Details/ViewDetails';
 import AppliedJobs from './Components/Applied Jobs/AppliedJobs';
+import Statistics from './Components/Statistics/Statistics';
+import Blog from './Components/Blog/Blog';
+import ErrorPage from './Components/Error Page/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -29,6 +33,15 @@ const router = createBrowserRouter([
         path: 'applied-jobs',
         element: <AppliedJobs></AppliedJobs>,
         loader: () => fetch('/jobs.json')
+      },
+      {
+        path: 'statistics',
+        element: <Statistics></Statistics>
+      },
+      {
+        path: 'blog',
+        element: <Blog></Blog>
+
       }
     ]
   },

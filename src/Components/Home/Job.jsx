@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Job = ({ job }) => {
 
+    // console.log(job)
     const { logo, job_title, company_name, remote_or_onsite, job_type, location, salary, id } = job;
 
     return (

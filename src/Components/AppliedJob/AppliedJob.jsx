@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AppliedJob = ({ appliedJob }) => {
+    
+    const { logo, job_title, company_name, remote_or_onsite, job_type, location, salary, id } = appliedJob;
 
-    const { logo, job_title, company_name, remote_or_onsite, job_type, location, salary, } = appliedJob;
-    
-    
+
     return (
         <div className='flex items-center relative border border-solid border-slate-200 rounded-md my-6'>
             <div className='bg-slate-200 h-full w-auto px-2 md:px-5 py-12 md:py-16 m-3 md:m-6 rounded'>
@@ -25,7 +26,8 @@ const AppliedJob = ({ appliedJob }) => {
                 </div>
             </div>
             <div className='absolute right-1 md:right-6'>
-                <button className='text-xs md:text-base bg-gradient-to-r from-sky-500 to-indigo-500 rounded-md px-2 md:px-5 py-2 font-extrabold text-white'>View Details</button>
+                <Link to={`/view-details/${id}`}><button className='text-xs md:text-base bg-gradient-to-r from-sky-500 to-indigo-500 rounded-md px-2 md:px-5 py-2 font-extrabold text-white'>View Details</button></Link>
+                
             </div>
         </div>
     );

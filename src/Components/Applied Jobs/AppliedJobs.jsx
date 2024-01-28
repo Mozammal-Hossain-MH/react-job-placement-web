@@ -27,7 +27,6 @@ const AppliedJobs = () => {
     }, [])
 
     const [filterJobs, setFilterJobs] = useState([]);
-
     const handleJobsFilter = filter => {
         if (filter === 'all') {
             setFilterJobs(appliedJobs);

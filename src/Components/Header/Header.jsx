@@ -9,10 +9,10 @@ const Header = () => {
             <div className='flex justify-between items-center bg-white pl-10 sm:px-10 lg:px-40 py-6 shadow-md relative'>
                 <img className='' src={'/CareerHub.png'} />
                 <div className={`flex flex-col py-12 lg:py-0 w-full lg:w-auto bg-gray-100 lg:bg-inherit lg:block absolute text-center lg:static duration-100 ${toggleNav ? 'top-16 left-0' : '-top-60 left-0'}`}>
-                    <Link className='font-bold text-blue-500 mr-4 mb-2 lg:mb-0' to={'/'}>Home</Link>
-                    <Link className='font-medium mr-4 hover:text-blue-500 mb-2 lg:mb-0' to={'/statistics'}>Statistics</Link>
-                    <Link className='font-medium mr-4 hover:text-blue-500 mb-2 lg:mb-0' to={'/applied-jobs'}>Applied Jobs</Link>
-                    <Link className='font-medium mr-4 hover:text-blue-500 mb-2 lg:mb-0' to={'/blog'}>Blog</Link>
+                    <Link className='font-bold hover:text-blue-500 focus:text-blue-500 mr-4 mb-2 lg:mb-0' to={'/'}>Home</Link>
+                    <Link className='font-medium mr-4 hover:text-blue-500 focus:text-blue-500 mb-2 lg:mb-0' to={'/statistics'}>Statistics</Link>
+                    <Link className='font-medium mr-4 hover:text-blue-500 focus:text-blue-500 mb-2 lg:mb-0' to={'/applied-jobs'}>Applied Jobs</Link>
+                    <Link className='font-medium mr-4 hover:text-blue-500 focus:text-blue-500 mb-2 lg:mb-0' to={'/blog'}>Blog</Link>
                 </div>
                 <div className='lg:hidden  mr-2' onClick={() => setToggleNav(!toggleNav)}>
                     {

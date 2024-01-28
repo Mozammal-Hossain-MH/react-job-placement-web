@@ -7,15 +7,27 @@ import Header from '../Header/Header';
 
 const Home = () => {
 
+
     const categories = useLoaderData();
 
     const [jobs, setJobs] = useState([]);
+
+    const [showAllJobs, setShowAllJobs] = useState(false);
+
+    const displayedJobs = showAllJobs ? jobs : jobs.slice(0, 4);
+
+    const handleShowAllJobs = () => {
+        setShowAllJobs(true);
+    }
+
 
     useEffect(() => {
         fetch('jobs.json')
             .then(res => res.json())
             .then(data => setJobs(data))
     }, [])
+
+
 
     return (
         <div>
@@ -50,16 +62,21 @@ const Home = () => {
                 <p className='text-center font-medium my-8 text-gray-500'>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 <div className='grid lg:grid-cols-2 gap-10 '>
                     {
-                        jobs.map(job => <Job
+                        displayedJobs.map(job => <Job
                             key={job.id}
                             job={job}
                         ></Job>)
                     }
                 </div>
                 <div>
-                    <button className='bg-gradient-to-r from-sky-500 to-indigo-500 rounded-md px-5 py-2 font-semibold text-white my-10 block m-auto'>See All Jobs</button>
+                    {
+                        !showAllJobs && (
+                            <button onClick={handleShowAllJobs} className='bg-gradient-to-r from-sky-500 to-indigo-500 rounded-md px-5 py-2 font-semibold text-white my-10 block m-auto'>See All Jobs</button>
+                        )
+                    }
+
                 </div>
-                
+
             </div>
 
         </div>
